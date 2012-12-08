@@ -1,3 +1,54 @@
-body {
-  background: #E6E6FA;
+$body_bgcolor: #E6E6E6;
+$header_bgcolor: #d5d5d5;
+$main_bgcolor: #DDDDDD;
+$aside_bgcolor: #D9D9D9;
+$min_height: 400px;
+$page_width: 1100px;
+$sidebar_width: 200px;
+
+h1,h2,h3,h4,h5,p {
+  margin: 0px;
+  padding: 0px;
 }
+
+body {
+  background: $body_bgcolor;
+  margin: 0px;
+  padding: 0px;  
+}
+
+div#container {
+  width: $page_width;  
+  margin: auto; 
+  background: $body_bgcolor;
+}
+
+header {
+  height: 50px;
+  background: $header_bgcolor;
+}
+
+#wrapper {
+  width: 100%; 
+  overflow: hidden;
+}
+
+section#main {
+  background: $main_bgcolor;
+  min-height: $min_height;
+  width: $page_width - $sidebar_width; 
+  float: left;
+}
+
+aside {
+  background: $aside_bgcolor;
+  width: $sidebar_width;
+  float: left;
+  min-height: $min_height;
+}
+
+footer {
+  height: 30px;
+  background: $header_bgcolor;  
+}
+

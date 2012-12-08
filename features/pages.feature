@@ -9,7 +9,7 @@ Feature: Log in as user
   Scenario: Newcomer entered successfully
     
     When I visit to home page   
-    Then I should see "wellcome"
+    Then I should see "Wellcome"
    
   
  
