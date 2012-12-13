@@ -1,54 +1,129 @@
 $body_bgcolor: #E6E6E6;
-$header_bgcolor: #d5d5d5;
-$main_bgcolor: #DDDDDD;
-$aside_bgcolor: #D9D9D9;
-$min_height: 400px;
+$header_bgcolor: #6B8BC6;
+$menu_bgcolor: #2A416D;
+$main_bgcolor: #D9E1F0;
+$aside_bgcolor: #989898;
+$footer_bgcolor: #2A416D;
+$min_height: 500px;
 $page_width: 1100px;
 $sidebar_width: 200px;
 
 h1,h2,h3,h4,h5,p {
-  margin: 0px;
-  padding: 0px;
+  margin: 0px;  
 }
 
 body {
-  background: $body_bgcolor;
-  margin: 0px;
-  padding: 0px;  
+  background: $body_bgcolor; 
+  font-family: "Times New Roman", Times, serif;  
 }
+
+h1, h2, h3 {
+  font-family: "Arial", Helvetica, sans-serif; 
+}
+
+h1 {font-size: 1.875em;}
+h2 {font-size: 1.5em;}
+h3 {font-size: 1.0em;}
+p {font-size: 0.875em;}
 
 div#container {
   width: $page_width;  
   margin: auto; 
   background: $body_bgcolor;
+  margin-top: 10px;
 }
 
 header {
-  height: 50px;
+  height: 158px;
   background: $header_bgcolor;
+}
+
+nav {
+  width: $page_width - $sidebar_width - 10px; 
+  height: 30px;
+  background: $menu_bgcolor;
+  border-radius: 5px 5px 0px 0px;
+  margin-left: 10px;
+  float: left;
 }
 
 #wrapper {
   width: 100%; 
   overflow: hidden;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 section#main {
   background: $main_bgcolor;
   min-height: $min_height;
-  width: $page_width - $sidebar_width; 
+  width: $page_width - $sidebar_width - 30px; 
   float: left;
-}
-
+  margin-left: 10px;
+  border-radius: 0px 0px 5px 5px;
+  padding: 10px; 
+  padding-bottom: 32767px;
+  margin-bottom: -32767px;
+  
+  }
+  
 aside {
   background: $aside_bgcolor;
   width: $sidebar_width;
   float: left;
-  min-height: $min_height;
+  min-height: $min_height + 30px;
+  padding-bottom: 32767px;
+  margin-bottom: -32767px;
 }
 
 footer {
-  height: 30px;
-  background: $header_bgcolor;  
+  background: $footer_bgcolor;
+  min-height: 31px;
 }
 
+header, aside, footer {
+  border-radius: 5px;
+}
+
+footer p.css_validation { 
+  float: right;   
+}
+
+footer p.copyright { 
+  color: #D9E1F0;
+  text-align: center;
+  line-height: 30px; 
+}
+
+header div#logo_img { 
+  width: 120px;
+  height: 140px;
+  background-image: url('main_photo.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #cccccc; 
+  float: right;
+  border: 4px solid $main_bgcolor; 
+  border-radius: 5px; 
+  margin: 5px;  
+}
+
+header div#logo_img a {
+  display: block;
+  height: 140px;
+  width: 120px;  
+}
+
+#main h3{
+  padding-top: 8px;
+  padding-bottom: 3px;
+}
+
+#navigation li { 
+  color: $main_bgcolor;
+  display: block;
+  float: left;
+  width: 100px;
+  line-height: 30px;
+  text-align: center;
+}
