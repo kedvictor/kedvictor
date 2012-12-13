@@ -89,13 +89,13 @@ footer p.css_validation {
   float: right;   
 }
 
-footer p.copyright { 
+footer p.copyright {
   color: #D9E1F0;
   text-align: center;
   line-height: 30px; 
 }
 
-header div#logo_img { 
+header div#logo_img {
   width: 120px;
   height: 140px;
   background-image: url('main_photo.jpg');
@@ -119,11 +119,28 @@ header div#logo_img a {
   padding-bottom: 3px;
 }
 
-#navigation li { 
+/* main navigation */
+
+#navigation li a {
   color: $main_bgcolor;
   display: block;
   float: left;
   width: 100px;
   line-height: 30px;
   text-align: center;
+  text-decoration: none;
 }
+
+#navigation li a:hover, #navigation li a.selected {
+  background: $main_bgcolor;
+  color: $menu_bgcolor;
+  border-top: 2px solid $menu_bgcolor;
+}
+
+#navigation li a:active {
+  background: #000000;
+  color: $menu_bgcolor;
+}
+
+
+
