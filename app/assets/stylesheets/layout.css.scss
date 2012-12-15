@@ -36,14 +36,16 @@ div#container {
 header {
   height: 158px;
   background: $header_bgcolor;
+  background: linear-gradient($header_bgcolor,$main_bgcolor);
 }
 
 nav {
   width: $page_width - $sidebar_width - 10px; 
   height: 30px;
   background: $menu_bgcolor;
+  background: linear-gradient($menu_bgcolor,$header_bgcolor 30%,$menu_bgcolor);
   border-radius: 5px 5px 0px 0px;
-  margin-left: 10px;
+  margin-left: 10px;  
   float: left;
 }
 
@@ -63,12 +65,12 @@ section#main {
   border-radius: 0px 0px 5px 5px;
   padding: 10px; 
   padding-bottom: 32767px;
-  margin-bottom: -32767px;
-  
-  }
+  margin-bottom: -32767px;  
+}
   
 aside {
   background: $aside_bgcolor;
+  background: linear-gradient($aside_bgcolor,#cccccc 500px,$menu_bgcolor);
   width: $sidebar_width;
   float: left;
   min-height: $min_height + 30px;
@@ -78,6 +80,7 @@ aside {
 
 footer {
   background: $footer_bgcolor;
+  background: linear-gradient($menu_bgcolor,$header_bgcolor 30%,$menu_bgcolor);
   min-height: 31px;
 }
 
@@ -129,17 +132,25 @@ header div#logo_img a {
   line-height: 30px;
   text-align: center;
   text-decoration: none;
+  margin-left: 3px;  
 }
 
-#navigation li a:hover, #navigation li a.selected {
+#navigation li a:hover {
+  font-weight: bold;
+}
+
+#navigation li a.selected, a:active {
   background: $main_bgcolor;
+  background: linear-gradient($menu_bgcolor,$main_bgcolor 20%, $main_bgcolor);
   color: $menu_bgcolor;
-  border-top: 2px solid $menu_bgcolor;
+  /*border-top: 2px solid $menu_bgcolor;*/
+  font-weight: bold;
 }
 
 #navigation li a:active {
-  background: #000000;
   color: $menu_bgcolor;
+  border-top: 2px solid $menu_bgcolor;
+  font-weight: bold;
 }
 
 

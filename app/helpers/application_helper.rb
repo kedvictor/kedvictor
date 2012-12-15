@@ -2,6 +2,6 @@ module ApplicationHelper
   
   def title
     title = @title || 'Wellcome'
-    "Kedyulich Victor | #{title}"
+    "Victor Kedyulich | #{title}"
   end
 end
