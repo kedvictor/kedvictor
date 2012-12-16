@@ -92,7 +92,7 @@ footer p.css_validation {
   float: right;   
 }
 
-footer p.copyright {
+footer p.copyright, footer p.copyright a {
   color: #D9E1F0;
   text-align: center;
   line-height: 30px; 
@@ -117,6 +117,41 @@ header div#logo_img a {
   width: 120px;  
 }
 
+header #vk_logo {
+  width: 200px;
+  height: 120px;
+  background: transparent;
+  background-image: url('vk_logo.gif');
+  background-size: 200px 120px;
+  background-repeat:no-repeat;
+  float: left;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+header #logo_wrapper {
+  float: left;
+  position: relative;
+  left: 10%;
+  
+}
+
+header #logo a h1 {
+  float: left;
+  
+  font-size: 3em;  
+  color: $main-bgcolor;
+  text-shadow: 3px 3px 0px $menu_bgcolor;
+  margin-left: 40px;
+  margin-top: 20px;
+  margin-bottom: 10px; 
+}
+
+header #logo_wrapper h3 {
+  margin-left: 45px; 
+  color: $menu_bgcolor; 
+}
+
 #main h3{
   padding-top: 8px;
   padding-bottom: 3px;
@@ -136,21 +171,18 @@ header div#logo_img a {
 }
 
 #navigation li a:hover {
-  font-weight: bold;
+  font-weight: bold;  
 }
 
-#navigation li a.selected, a:active {
+#navigation li a.selected, #navigation li a:active {
   background: $main_bgcolor;
   background: linear-gradient($menu_bgcolor,$main_bgcolor 20%, $main_bgcolor);
-  color: $menu_bgcolor;
-  /*border-top: 2px solid $menu_bgcolor;*/
+  color: $menu_bgcolor;  
   font-weight: bold;
 }
 
-#navigation li a:active {
-  color: $menu_bgcolor;
-  border-top: 2px solid $menu_bgcolor;
-  font-weight: bold;
+#navigation li a:active { 
+  border-top: 2px solid $menu_bgcolor; 
 }
 
 
