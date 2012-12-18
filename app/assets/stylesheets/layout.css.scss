@@ -35,15 +35,19 @@ div#container {
 
 header {
   height: 158px;
-  background: $header_bgcolor;
-  background: linear-gradient($header_bgcolor,$main_bgcolor);
+  background: $header_bgcolor; 
+  background: -webkit-linear-gradient(top, $header_bgcolor, $main_bgcolor);
+  background: -moz-linear-gradient(top, $header_bgcolor, $main_bgcolor);
+  background: -o-linear-gradient(top, $header_bgcolor, $main_bgcolor);
 }
 
 nav {
   width: $page_width - $sidebar_width - 10px; 
   height: 30px;
   background: $menu_bgcolor;
-  background: linear-gradient($menu_bgcolor,$header_bgcolor 30%,$menu_bgcolor);
+  background: -webkit-linear-gradient($menu_bgcolor,$header_bgcolor 30%,$menu_bgcolor);
+  background: -moz-linear-gradient($menu_bgcolor,$header_bgcolor 30%,$menu_bgcolor);
+  background: -o-linear-gradient($menu_bgcolor,$header_bgcolor 30%,$menu_bgcolor);
   border-radius: 5px 5px 0px 0px;
   margin-left: 10px;  
   float: left;
@@ -70,7 +74,9 @@ section#main {
   
 aside {
   background: $aside_bgcolor;
-  background: linear-gradient($aside_bgcolor,#cccccc 500px,$menu_bgcolor);
+  background: -webkit-linear-gradient($aside_bgcolor,#cccccc 500px,$menu_bgcolor);
+  background: -moz-linear-gradient($aside_bgcolor,#cccccc 500px,$menu_bgcolor);
+  background: -o-linear-gradient($aside_bgcolor,#cccccc 500px,$menu_bgcolor);
   width: $sidebar_width;
   float: left;
   min-height: $min_height + 30px;
@@ -80,7 +86,9 @@ aside {
 
 footer {
   background: $footer_bgcolor;
-  background: linear-gradient($menu_bgcolor,$header_bgcolor 30%,$menu_bgcolor);
+  background: -webkit-linear-gradient($menu_bgcolor,$header_bgcolor 30%,$menu_bgcolor);
+  background: -moz-linear-gradient($menu_bgcolor,$header_bgcolor 30%,$menu_bgcolor);
+  background: -o-linear-gradient($menu_bgcolor,$header_bgcolor 30%,$menu_bgcolor);
   min-height: 31px;
 }
 
@@ -131,14 +139,14 @@ header #vk_logo {
 
 header #logo_wrapper {
   float: left;
+  width: 500px;
   position: relative;
   left: 10%;
   
 }
 
-header #logo a h1 {
-  float: left;
-  
+header #logo a h1 {  
+  float: left;  
   font-size: 3em;  
   color: $main-bgcolor;
   text-shadow: 3px 3px 0px $menu_bgcolor;
@@ -147,9 +155,11 @@ header #logo a h1 {
   margin-bottom: 10px; 
 }
 
-header #logo_wrapper h3 {
+header #logo_wrapper h3 { 
+  display: block; 
+  width: 400px;
   margin-left: 45px; 
-  color: $menu_bgcolor; 
+  color: $menu_bgcolor;   
 }
 
 #main h3{
@@ -176,7 +186,9 @@ header #logo_wrapper h3 {
 
 #navigation li a.selected, #navigation li a:active {
   background: $main_bgcolor;
-  background: linear-gradient($menu_bgcolor,$main_bgcolor 20%, $main_bgcolor);
+  background: -webkit-linear-gradient($menu_bgcolor,$main_bgcolor 20%, $main_bgcolor);
+  background: -moz-linear-gradient($menu_bgcolor,$main_bgcolor 20%, $main_bgcolor);
+  background: -o-linear-gradient($menu_bgcolor,$main_bgcolor 20%, $main_bgcolor);
   color: $menu_bgcolor;  
   font-weight: bold;
 }
