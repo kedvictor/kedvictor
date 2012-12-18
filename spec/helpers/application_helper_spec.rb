@@ -6,12 +6,12 @@ describe ApplicationHelper do
     
     it "should contain predefined title if defined" do
       assign :title, 'some title'
-      helper.title.should == 'Kedyulich Victor | some title'
+      helper.title.should == 'Victor Kedyulich | some title'
     end
     
     it "should contain 'Wellcome' if @title not defined" do
       assign :title, nil
-      helper.title.should == 'Kedyulich Victor | Wellcome'
+      helper.title.should == 'Victor Kedyulich | Wellcome'
     end    
   end
 
