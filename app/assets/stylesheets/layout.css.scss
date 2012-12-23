@@ -1,3 +1,5 @@
+/* General */
+
 $body_bgcolor: #E6E6E6;
 $header_bgcolor: #6B8BC6;
 $menu_bgcolor: #2A416D;
@@ -25,6 +27,11 @@ h1 {font-size: 1.875em;}
 h2 {font-size: 1.5em;}
 h3 {font-size: 1.0em;}
 p {font-size: 0.875em;}
+
+#main h3{
+  padding-top: 8px;
+  padding-bottom: 3px;
+}
 
 div#container {
   width: $page_width;  
@@ -96,6 +103,8 @@ header, aside, footer {
   border-radius: 5px;
 }
 
+/* footer */
+
 footer p.css_validation { 
   float: right;   
 }
@@ -105,6 +114,8 @@ footer p.copyright, footer p.copyright a {
   text-align: center;
   line-height: 30px; 
 }
+
+/* header */
 
 header div#logo_img {
   width: 120px;
@@ -126,11 +137,11 @@ header div#logo_img a {
 }
 
 header #vk_logo {
-  width: 200px;
-  height: 120px;
+  width: 160px;
+  height: 100px;
   background: transparent;
   background-image: url('vk_logo.gif');
-  background-size: 200px 120px;
+  background-size: 160px 100px;
   background-repeat:no-repeat;
   float: left;
   margin-left: 10px;
@@ -160,11 +171,6 @@ header #logo_wrapper h3 {
   width: 400px;
   margin-left: 45px; 
   color: $menu_bgcolor;   
-}
-
-#main h3{
-  padding-top: 8px;
-  padding-bottom: 3px;
 }
 
 /* main navigation */
@@ -197,5 +203,50 @@ header #logo_wrapper h3 {
   border-top: 2px solid $menu_bgcolor; 
 }
 
+/* side navigation */
 
+div#sidebarmenu {
+    padding: 10px;
+}
 
+ul#nav, ul.nav {
+    width: 150px;
+    background: #ccc;
+    border: 1px solid white;
+}
+
+ul.nav {
+   display: none;     
+} 
+
+#nav li {
+    height: 30px;
+    text-indent: 10px;
+    line-height: 30px;  
+}
+
+#nav li:hover {
+    position: relative;
+    background: #ddd;
+}
+
+#nav li:hover > .nav {
+    display: block;
+    position: absolute;   
+    left: 145px;
+    top: 8px;    
+}
+
+#nav a {
+    text-decoration: none;
+    color: #333;
+    width: inherit;
+    height: inherit;    
+}
+
+li.with_submenu {
+  background: url('submenu_forward.png');
+  background-size: 18px 18px;
+  background-position: right;
+  background-repeat: no-repeat; 
+}
