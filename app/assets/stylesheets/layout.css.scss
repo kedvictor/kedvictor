@@ -207,15 +207,16 @@ header #logo_wrapper h3 {
 
 div#sidebarmenu {
     padding: 10px;
+    text-shadow: 1px 1px 0px #ddd;   
 }
 
-ul#nav, ul.nav {
+ul#nav, #nav ul.nav {
     width: 150px;
     background: #ccc;
     border: 1px solid white;
 }
 
-ul.nav {
+#nav ul.nav {
    display: none;     
 } 
 
@@ -223,11 +224,6 @@ ul.nav {
     height: 30px;
     text-indent: 10px;
     line-height: 30px;  
-}
-
-#nav li:hover {
-    position: relative;
-    background: #ddd;
 }
 
 #nav li:hover > .nav {
@@ -244,9 +240,17 @@ ul.nav {
     height: inherit;    
 }
 
-li.with_submenu {
-  background: url('submenu_right.gif');
-  background-size: 18px 18px;
-  background-position: right;
-  background-repeat: no-repeat; 
+#nav li.with_submenu {
+  background: url('submenu.png');
+  background-size: 4px 8px;
+  background-position: 90% center;
+  background-repeat: no-repeat;   
 }
+
+#nav li:hover {           /* place for this item must be AFTER previous*/
+    position: relative;
+    background: #ddd;
+}
+
+/* menu selector*/ 
+
