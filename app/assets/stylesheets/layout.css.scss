@@ -252,16 +252,35 @@ ul#nav, #nav ul.nav {
     background: #ddd;
 }
 
+
 /* menu selector*/ 
 
-#navs ul.navs {
-   display: none;   
-} 
-
-#navs li:hover > .navs { 
-  display: block; 
+#menu_selector li {
+  padding-left: 16px;
 }
 
- 
+#menu_selector li.sub {
+  cursor: pointer;
+}
 
+#menu_selector a, #menu_selector a:hover {
+  text-decoration: none;
+  color: black;
+} 
 
+#menu_selector a:active {
+  color: #fff;
+  background: #555;
+}
+
+#menu_selector li.plus {
+  background-image: url('toggle-small-expand.png');
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+
+#menu_selector li.minus {
+  background-image: url('toggle_small_collapse.png');
+  background-repeat: no-repeat;
+  background-position: left top;
+}
