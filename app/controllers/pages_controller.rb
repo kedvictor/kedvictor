@@ -4,7 +4,10 @@ class PagesController < ApplicationController
     @title = 'Wellcome'
   end
   
-  def mouse
+  def mouse  
     @title = 'Mouse training'
+    if params[:fs] 
+      render "fs_mouse", :layout => 'full_screen'
+    end  
   end
 end

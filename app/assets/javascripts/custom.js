@@ -1,5 +1,5 @@
-$(function() {  
-  
+$(document).ready(function(){ 
+    
   /* Catch selected item in main navigation menu */
     
   $("#navigation li a").click(function(){  
@@ -33,8 +33,7 @@ $(function() {
         } 
       }       
     });  
-  });
+  }); 
    
 });
-
 
