@@ -1,19 +1,9 @@
 #mouse_area {
   width: 100%;
   height: 500px;
-  background: #FFC43B; 
-  cursor:url(baby_2.gif),auto;
-}
-
-#fs_mouse_area {
-  width: 100%;
-  height: 900px;
-  background: #FFC43B; 
+  background: #FFC43B;
+  clip: rect (top, right, bottom, left); 
   cursor: none;
-}
-
-p.reference {  
-  text-align: center;  
 }
 
 #cursor {
@@ -21,7 +11,17 @@ p.reference {
   height: 413px;  
   background-image: url(baby_big.gif);
   background-repeat: no-repeat;
-  position: absolute;
+  position: relative;
   top: 0px;
   left: 0px;
 }
+
+#mouse_area:-webkit-full-screen {
+    width: 100%;
+    height: 100%;
+  }
+
+#mouse_area:-moz-full-screen {
+    width: 100%;
+    height: 100%;
+  }

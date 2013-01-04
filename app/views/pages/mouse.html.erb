@@ -1,5 +1,11 @@
 
-<h3><span> Mouse deal training </span></h3>
-<p class='reference'><%= link_to 'full screen', pages_mouse_path(:fs => true) %></p>
-<div id='mouse_area'></div>
+<h3 style="display: inline"><span> Mouse deal training </span></h3>
+<button onclick="goFullscreen('mouse_area');" style="float: right; margin: 10px;">
+  Fullscreen (ESC to exit)
+</button>
+<button onclick="history.go(-1);" style="margin-left: 20px">Exit</button>
+<div id='mouse_area'>
+<div id="cursor"></div>
+</div>
+
 
