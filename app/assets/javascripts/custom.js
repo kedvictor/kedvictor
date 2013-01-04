@@ -1,10 +1,11 @@
 $(document).ready(function(){ 
     
-  /* Catch selected item in main navigation menu */
-    
-  $("#navigation li a").click(function(){  
-    $("a.selected").removeClass("selected");
-    $(this).addClass("selected");
+  /* Catch selected item in main navigation menu */  
+  
+  $("#navigation li a").each(function(index){     
+    if (window.location.pathname == $(this).attr('href')) {
+      $(this).addClass("selected"); 
+      }
   }); 
   
   /* Functionality for list menu selector on sidebar */
