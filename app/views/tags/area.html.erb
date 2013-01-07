@@ -1,0 +1,27 @@
+<h2>&lt;area&gt; tag</h2><br />
+
+<img id="anniversary" src=<%= image_path('tags/anniversary.jpg') %> 
+  width="600" height="450" alt="Main photo" usemap="#photo">
+
+
+<map id="photo" name="photo">
+  <area shape="poly" coords="2,247,29,161,70,145,71,133,62,97,87,73,116,91,116,150,144,175,147,239" 
+    href="#" alt="Інформація" title="Марія Кедюлич (Кормілька)"> 
+  <area shape="poly" coords="164,276,168,157,199,146,189,102,218,80,239,105,239,145,268,157,276,279"  
+    href="#" alt="Інформація" title="Марія Кедюлич (ювілярка)">    
+  <area shape="poly" coords="279,198,262,151,279,128,295,111,288,64,314,53,340,73,333,112,361,133,372,224"  
+    href="#" alt="Інформація" title="Ірина Іванчо (сестра ювілярки)">        
+  <area shape="poly" coords="373,216,366,106,387,89,414,102,414,147,447,177,431,244"  
+    href="#" alt="Інформація" title="Марія Кедюлич (шовгориня)">   
+  <area shape="poly" coords="430,246,448,170,451,113,493,101,513,166,553,270"  
+    href="#" alt="Інформація" title="Ольга Кость (сусідка, подружка)"> 
+  <area shape="poly" coords="37,342,541,349,533,437,42,431"  
+    href="#" alt="Інформація" title="Ноги деяких учасниць трапези в честь ювілярки">                   
+</map>
+
+<div id="coordinates">
+  <p class="mouse_coords">Mouse position: </p> 
+  <label for="coordinates">Contour:</label> 
+  <input type="text" name="coordinates" class="contour_coords" style="width:80%" />
+  <button onclick="$('.contour_coords').val('')">Clear</button>
+</div>

@@ -50,7 +50,7 @@ header {
 }
 
 nav {
-  width: $page_width - $sidebar_width - 10px; 
+  width: $page_width - $sidebar_width - 30px; 
   height: 30px;
   background: $menu_bgcolor;
   background: -webkit-linear-gradient($menu_bgcolor,$header_bgcolor 30%,$menu_bgcolor);
@@ -71,7 +71,7 @@ nav {
 section#main {
   background: $main_bgcolor;
   min-height: $min_height;
-  width: $page_width - $sidebar_width - 30px; 
+  width: $page_width - $sidebar_width - 50px; 
   float: left;
   margin-left: 10px;
   border-radius: 0px 0px 5px 5px;
@@ -88,6 +88,7 @@ aside {
   width: $sidebar_width;
   float: left;
   min-height: $min_height + 30px;
+  padding: 10px;
   padding-bottom: 32767px;
   margin-bottom: -32767px;
 }
@@ -256,6 +257,10 @@ ul#nav, #nav ul.nav {
 
 /* menu selector*/ 
 
+div#menu_selector {
+  padding: 10px;
+}
+
 #menu_selector li {
   padding-left: 16px;
 }
@@ -266,8 +271,12 @@ ul#nav, #nav ul.nav {
 
 #menu_selector a, #menu_selector a:hover {
   text-decoration: none;
-  color: black;
+  color: blue;
 } 
+
+#menu_selector a:hover {
+  text-decoration: underline;
+}
 
 #menu_selector a:active {
   color: #fff;
