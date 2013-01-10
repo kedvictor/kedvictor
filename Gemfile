@@ -5,6 +5,7 @@ gem 'mysql2'
 gem 'pg'
 gem 'thin'
 gem 'resque'
+gem 'redis'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

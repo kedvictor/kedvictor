@@ -197,6 +197,7 @@ DEPENDENCIES
   mysql2
   pg
   rails (= 3.2.9)
+  redis
   resque
   rspec-rails
   sass-rails (~> 3.2.3)
