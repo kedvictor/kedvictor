@@ -8,4 +8,9 @@ class PagesController < ApplicationController
     @title = 'Mouse training'       
   end
   
+  def resque_job
+    Resque.enqueue(SimpleJob, "Yahoo!")
+    render :nothing => true
+  end
+  
 end
