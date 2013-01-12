@@ -15,5 +15,12 @@ describe PagesController do
       response.should be_success
     end
   end
+  
+  describe "GET 'resque'" do
+    it "returns http success" do
+      get 'resque'
+      response.should be_success
+    end
+  end
 
 end

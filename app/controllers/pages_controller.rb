@@ -8,9 +8,13 @@ class PagesController < ApplicationController
     @title = 'Mouse training'       
   end
   
-  def resque_job
-    Resque.enqueue(SimpleJob, "Yahoo!")
-    render :nothing => true
+  def resque    
+  end
+  
+  def enqueue 
+    name = params['name'].blank? ? 'untitled job' : params['name'] 
+    duration = params['duration'].blank? ? 5 : params['duration'] 
+    Resque.enqueue(SimpleJob, name, duration.to_i)         
   end
   
 end

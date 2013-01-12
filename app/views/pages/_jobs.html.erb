@@ -1,0 +1,39 @@
+<% begin %>
+<% jobs = Resque.peek Resque.queues[0], 0, 100 %>
+<% rescue Exception => e %>
+<%=    e.message %>
+<%    jobs = [] %>
+<% end %>
+
+<% unless jobs.blank? %>
+
+<table>
+  <thead>
+    <tr>
+      <th>N</th>
+      <th>Class</th>
+      <th>Arguments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% n = 1 %>
+    <% jobs.each do |job| %>
+      <tr>
+        <td><%= n.to_s %></td>
+        <td><%= job['class'] %></td>
+        <td><%= job['args'] %></td>
+      </tr>
+      <% n += 1 %>
+    <% end %>
+  
+  </tbody>
+</table>
+<br/>
+<button onclick="window.location.reload()" >Refresh</button>
+
+<% end %>
+
+<style>
+  table {width: 100%; margin-top: 20px;}
+  td, th {border: 1px solid black; text-align: center; padding: 5px;}
+</style>

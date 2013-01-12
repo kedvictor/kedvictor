@@ -4,7 +4,7 @@ gem 'rails', '3.2.11'
 gem 'mysql2'
 gem 'pg'
 gem 'thin'
-gem 'resque'
+gem 'resque', :require => "resque/server"
 gem 'redis'
 
 group :assets do

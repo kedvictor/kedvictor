@@ -1,0 +1,27 @@
+<h3> Redis / Resque page </h3>
+<br />
+<p>Provides background task(s) in the queue(s). For this functionality you must
+in terminal run Redis server <code>&nbsp;redis-server&nbsp;</code> and start worker <code>&nbsp;rake resque:work QUEUE='*'&nbsp;</code>.</p>
+<br /><br />
+<div id="newtask">
+  <%= form_tag '/pages/enqueue', :remote => true do %>
+    <%= field_set_tag "New task", :class => "fields" do %>
+      <%= label_tag :name %>
+      <%= text_field_tag :name %>
+      <%= label_tag :duration %>
+      <%= text_field_tag :duration, '', :size => 5 %>
+      <%= submit_tag "Place to queue" %>
+      <a  href="/resque" target='blank' style="float: right">
+        View Resque web interface (in new tab)</a>
+    <% end %>
+  <% end %>
+</div>
+<br/><br />
+
+<div id="queue"><%= render :partial => 'jobs' %></div>
+
+<style>
+  .fields {border: 1px solid black; padding: 1em;}
+  .fields label {margin-left: 20px;}
+  code {background: black; color: yellow; font-weight: bold;}
+</style>
