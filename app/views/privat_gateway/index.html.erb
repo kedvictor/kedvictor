@@ -1,0 +1,79 @@
+
+<h3>Gateway Privat test on dev.2show.mobi</h3>
+
+<fieldset id="search-request">
+  <legend>Bill search request</legend>
+  
+  <%= form_tag( privat_gateway_send_search_request_path , 
+    :remote => true) do %>
+  
+    <p>bill_identifier: 
+      <%= text_field_tag :bill_identifier, "121212", :size => 10 %>
+      <%= submit_tag "Send search request" %>
+    </p>  
+  
+  <% end %>
+  
+</fieldset>
+
+<fieldset id="bill-request">
+  <legend>Bill input request</legend>
+  
+  <%= form_tag( privat_gateway_send_bill_request_path , 
+    :remote => true) do %>
+  
+    <p>bill_identifier: 
+      <%= text_field_tag :bill_identifier, "232323", :size => 10 %>      
+    </p> 
+    <p>sum: 
+      <%= text_field_tag :sum, "123.40", :size => 10 %>      
+    </p>
+    <p>key: 
+      <%= text_field_tag :key, "8800995566", :size => 10 %>      
+    </p>
+    <p>date: 
+      <%= text_field_tag :date, Time.now.strftime("%Y-%m-%dT%H:%M:%S"), :size => 15 %>      
+    </p>   
+    
+     
+    <%= submit_tag "Send bill request" %>
+  <% end %>
+  
+</fieldset>
+
+
+<fieldset id="result">
+  <legend>Bill search response</legend>
+  <div id="xml-result"></div>  
+</fieldset>
+
+
+
+<style type="text/css">
+  
+  fieldset { 
+    border: 1px solid blue;
+    margin-top: 20px;
+    padding: 10px;
+    width: 40%;
+    min-height: 50px; 
+  }
+  
+  legend {
+    padding: 3px;
+  }
+  
+  input[type=submit] {
+    width: 150px;
+    float: right;
+  }
+      
+  #result {
+    position: relative;
+    left: 400px;
+    top: -270px;
+    min-height: 230px;
+  }
+  
+</style>
+

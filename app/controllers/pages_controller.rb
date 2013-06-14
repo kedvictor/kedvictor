@@ -1,4 +1,5 @@
-class PagesController < ApplicationController
+class PagesController < ApplicationController  
+  
   
   def index
     @title = 'Wellcome'
@@ -16,5 +17,8 @@ class PagesController < ApplicationController
     duration = params['duration'].blank? ? 5 : params['duration'] 
     Resque.enqueue(SimpleJob, name, duration.to_i)         
   end
+  
+  def widget
+  end  
   
 end

@@ -6,6 +6,7 @@ gem 'pg'
 gem 'thin'
 gem 'resque', :require => "resque/server"
 gem 'redis'
+gem 'builder'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
