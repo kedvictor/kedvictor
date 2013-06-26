@@ -19,6 +19,10 @@ class PagesController < ApplicationController
   end
   
   def widget
-  end  
+  end 
+  
+  def http_request 
+    @result = request.inspect
+  end
   
 end
