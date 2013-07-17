@@ -294,3 +294,22 @@ div#menu_selector {
   background-repeat: no-repeat;
   background-position: left top;
 }
+
+/* Tables */
+
+table {
+  width: 100%;
+  font-size: 14px;
+}
+
+table th, table td {
+  border: 1px solid blue;
+  text-align: center;
+  padding: 3px;
+}
+
+table th {
+  background-color: #ADD8E6;
+  padding: 5px;
+  font-weight: bold;
+}

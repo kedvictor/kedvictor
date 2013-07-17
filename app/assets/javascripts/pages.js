@@ -9,7 +9,9 @@ $(document).ready(function(){
 
   $("#mouse_area").click(function() {      
     $("#mouse_area").css("background", 'rgb('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')');
-  });  
+  });
+   
+);  
   
 
 });

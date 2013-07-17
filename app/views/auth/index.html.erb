@@ -1,0 +1,42 @@
+<h2>Authentications</h2>
+<br />
+<p>Session: <%= session[:session_id].inspect %></p>
+<p>--------------------------------------------------------------</p>
+<p>Cookies:</p>
+<% cookies.each do |key,value| %>
+  <p><%= "key: #{key} | value: #{value}" %></p>
+<% end %>
+<p>--------------------------------------------------------------</p>
+
+<table class="sortable">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>guid</th>
+      <th>ident</th>
+      <th>user_id</th>
+      <th>created</th>
+      <th>updated</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @agents.each do |agent| %>
+      <tr>
+        <td><%= agent.id %></td>
+        <td><%= agent.guid %></td>
+        <td><%= agent.ident %></td>
+        <td><%= agent.user_id %></td>
+        <td><%= agent.created_at %></td>
+        <td><%= agent.updated_at %></td>
+      </tr>    
+    <% end %>
+  </tbody> 
+</table>
+
+<script>
+  $(document).ready(function() 
+    { 
+        $(".sortable").tablesorter(); 
+    } 
+); 
+</script>
