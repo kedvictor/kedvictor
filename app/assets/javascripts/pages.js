@@ -7,12 +7,9 @@ $(document).ready(function(){
     $('#cursor').css({ left: relX + 1, top: relY + 1 });
   }); 
 
-  $("#mouse_area").click(function() {      
-    $("#mouse_area").css("background", 'rgb('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')');
+  $('#mouse_area').click(function() {      
+    $('#mouse_area').css('background', 'rgb('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')');
   });
-   
-);  
-  
 
 });
 
@@ -23,4 +20,4 @@ $(document).ready(function(){
     } else if (element.webkitRequestFullScreen) {     
       element.webkitRequestFullScreen();
    }  
-  }
+  };
