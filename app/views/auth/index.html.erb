@@ -1,6 +1,7 @@
 <h2>Authentications</h2>
 <br />
 <p>Session: <%= session[:session_id].inspect %></p>
+<p>Session: <%= session.inspect %></p>
 <p>--------------------------------------------------------------</p>
 <p>Cookies: </p>
 <% cookies.each do |key,value| %>
@@ -32,8 +33,6 @@
     <% end %>
   </tbody> 
 </table>
-
-
 
 <script>  
   
