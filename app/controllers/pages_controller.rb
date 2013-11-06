@@ -25,4 +25,8 @@ class PagesController < ApplicationController
     @result = request.inspect
   end
   
+  def xml_request
+    
+  end
+  
 end

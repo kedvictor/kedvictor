@@ -19,6 +19,7 @@ Kedvictor::Application.routes.draw do
   get "pages/mouse"
   get "pages/widget"
   get "pages/http_request"  
+  get "pages/xml_request"  
   
   post "pages/enqueue"
   
