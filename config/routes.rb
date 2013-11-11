@@ -10,7 +10,8 @@ Kedvictor::Application.routes.draw do
   post "privat_gateway/send_search_request"
   post "privat_gateway/send_bill_request" 
   
-  get "auth/ident" 
+  get "auth/ident"
+  get "test_mobile/index"
   
   
   get "tags/area"
