@@ -152,4 +152,8 @@ function show2_hide_loading() {
     document.getElementById("2show_iframe").style.display = 'block';
     //document.getElementById('2show_iframe_loading').style.display = 'none';
     document.getElementById("2show_iframe").setAttribute("onload", "");
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8b6316243ab440193a1f091cea868ba7de0a97db
