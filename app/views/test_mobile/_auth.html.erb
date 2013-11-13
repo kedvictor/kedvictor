@@ -1,6 +1,5 @@
-<%#
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
-%>
-
-<%= "_auth.html" %>
+<p>login (phone, email): <%= text_field_tag 'login', '', :class => 'field' %></p>
+<p><%= submit_tag 'Send login' %></p>
+<p>token: <%= text_field_tag 'auth_token', '', :class => 'field' %></p>
+<p>pass: <%= text_field_tag 'auth_pass', '', :class => 'field' %></p>
+<p><%= submit_tag 'Send password' %></p>

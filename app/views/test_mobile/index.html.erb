@@ -3,13 +3,21 @@
 <div id="tabs" style="position: relative; width: 98%; min-height: 400px; margin-top: 15px;" >
 
   <ul>
-    <li><a href="#tab1">General</a></li>
-    <li><a href="#tab2">Auth</a></li>
+    <li><a href="#general">General</a></li>
+    <li><a href="#auth">Auth</a></li>
+    <li><a href="#event_places">Event places</a></li>
+    <li><a href="#reservation">Reservation</a></li>
+    <li><a href="#order_status">Order status</a></li>
   </ul>  
 
-  <div id="tab1"><%= render :partial => 'general' %></div>
-  <div id="tab2"><%= render :partial => 'auth' %></div>
-  
+  <%= form_tag '/test_mobile/send_request', :remote => true do %>
+    <div id="general"><%= render :partial => 'general' %></div>
+    <div id="auth"><%= render :partial => 'auth' %></div>
+    <div id="event_places"><%= render :partial => 'event_places' %></div>
+    <div id="reservation"><%= render :partial => 'reservation' %></div>
+    <div id="order_status"><%= render :partial => 'order_status' %></div>
+    <div class="output"></div>
+  <% end %>
 </div>
 
 <style type="text/css">
@@ -21,11 +29,20 @@
     width: 100px;
     text-align: center;
   }
+  .output {
+    width: 95%;
+    height: 100px;
+    padding: 10px;
+    background: #ffef8f;
+    border: 1px solid blue;
+  }
+  .field {
+    position: relative;    
+  }
    
 </style>
 
 <script type="text/javascript">
-
 
  $(function() {    
     $('#tabs').tabs();

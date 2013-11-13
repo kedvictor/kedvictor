@@ -23,5 +23,6 @@ Kedvictor::Application.routes.draw do
   get "pages/xml_request"  
   
   post "pages/enqueue"
+  post "test_mobile/send_request"
   
 end
