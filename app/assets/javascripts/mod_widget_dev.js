@@ -1,4 +1,5 @@
 var show2_domain = 'http://wg.dev.2show.mobi';
+//var show2_domain = 'http://localhost:3000';
 var show2_body_overflow_backup = '';
 var show2_html_overflow_backup = '';
 var show2_body_position_backup = '';
@@ -129,7 +130,7 @@ function show2_prepare_params(partner_id, wg_params) {
     for (var i = 0; i < wg_params.length; i++) {
         key = wg_params[i];
         params += "&amp;" + key[0] + "=" + encodeURIComponent(key[1]);
-    }    
+    }
     return params
 }
 
