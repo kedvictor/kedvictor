@@ -153,4 +153,5 @@ function show2_hide_loading() {
     document.getElementById("2show_iframe").style.display = 'block';
     //document.getElementById('2show_iframe_loading').style.display = 'none';
     document.getElementById("2show_iframe").setAttribute("onload", "");
+
 }
