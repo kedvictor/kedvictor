@@ -21,6 +21,8 @@ class TestMobileController < ApplicationController
       checksum_parts = [ params[:multiplex], params[:uid], params[:auth_token], params[:auth_pass], params[:network_id], params[:multiplex] ]      
       checksum = calculate_checksum checksum_parts
       post_params.merge! :token => params[:auth_token], :pass => params[:auth_pass], :checksum => checksum
+    when 'Send shows'
+      path = 'shows' 
     when 'Send event places'
       path = 'event_places'      
       post_params.merge! :event_id => params[:event_id]
