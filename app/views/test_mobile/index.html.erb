@@ -5,19 +5,31 @@
   <ul>
     <li><a href="#general">General</a></li>
     <li><a href="#auth">Auth</a></li>
+    <li><a href="#logout">Logout</a></li>
+    <li><a href="#dictionary">Dictionary</a></li>
     <li><a href="#shows">Shows</a></li>
+    <li><a href="#halls">Halls</a></li>
+    <li><a href="#changes">Changes</a></li>
+    <li><a href="#events_load">Events_load</a></li>
     <li><a href="#event_places">Event places</a></li>
     <li><a href="#reservation">Reservation</a></li>
     <li><a href="#order_status">Order status</a></li>
+    <li><a href="#logs">Logs</a></li>
   </ul>  
 
   <%= form_tag '/test_mobile/send_request', :remote => true do %>
     <div id="general"><%= render :partial => 'general' %></div>
     <div id="auth"><%= render :partial => 'auth' %></div>
+    <div id="logout"><%= render :partial => 'logout' %></div>
+    <div id="dictionary"><%= render :partial => 'dictionary' %></div>
     <div id="shows"><%= render :partial => 'shows' %></div>
+    <div id="halls"><%= render :partial => 'halls' %></div>
+    <div id="changes"><%= render :partial => 'changes' %></div>
     <div id="event_places"><%= render :partial => 'event_places' %></div>
+    <div id="events_load"><%= render :partial => 'events_load' %></div>
     <div id="reservation"><%= render :partial => 'reservation' %></div>
     <div id="order_status"><%= render :partial => 'order_status' %></div>
+    <div id="logs"><%= render :partial => 'log' %></div>
     <div class="output"></div>
   <% end %>
 </div>

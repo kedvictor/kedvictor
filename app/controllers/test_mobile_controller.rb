@@ -22,7 +22,17 @@ class TestMobileController < ApplicationController
       checksum = calculate_checksum checksum_parts
       post_params.merge! :token => params[:auth_token], :pass => params[:auth_pass], :checksum => checksum
     when 'Send shows'
-      path = 'shows' 
+      path = 'shows'
+    when 'Send halls'
+      path = 'halls'
+    when 'Send dictionary'
+      path = 'dictionary'
+    when 'Send changes'
+      path = 'changes'
+    when 'Send events load'
+      path = 'event_load'
+      post_params.merge! :event_id => params[:e_event_id], :show_id => params[:e_show_id],
+        :cinema_id => params[:e_cinema_id], :date => params[:e_date]
     when 'Send event places'
       path = 'event_places'      
       post_params.merge! :event_id => params[:event_id]
@@ -36,7 +46,14 @@ class TestMobileController < ApplicationController
       checksum_parts = [ params[:multiplex], params[:uid], params[:order_token], params[:detailed], params[:network_id], params[:multiplex] ]
       checksum = calculate_checksum checksum_parts
       post_params.merge! :token => params[:order_token], :detailed => params[:detailed], :checksum => checksum
-    end
+    when 'Send logs'
+      path = 'log'
+    when 'Logout'
+      path = 'logout'
+      checksum_parts = [ params[:multiplex], params[:uid], params[:network_id], params[:multiplex] ]
+      checksum = calculate_checksum checksum_parts
+      post_params.merge! :network_id => params[:network_id], :checksum => checksum
+    end    
     
     uri = URI.parse(params[:url] + path)
     http = Net::HTTP.new(uri.host, uri.port)
@@ -44,6 +61,7 @@ class TestMobileController < ApplicationController
     request.set_form_data(post_params)
     response = http.request(request)
     @result = response.body
+    puts @result
     render  
   end
 
