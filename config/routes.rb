@@ -20,7 +20,8 @@ Kedvictor::Application.routes.draw do
   get "pages/mouse"
   get "pages/widget"
   get "pages/http_request"  
-  get "pages/xml_request"  
+  get "pages/xml_request"
+  get "pages/except"
   
   post "pages/enqueue"
   post "test_mobile/send_request"

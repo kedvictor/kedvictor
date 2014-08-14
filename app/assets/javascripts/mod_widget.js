@@ -1,4 +1,4 @@
-var show2_domain = 'http://wg.dev.2show.mobi';
+var show2_domain = 'http://dev.2show.mobi';
 var show2_body_overflow_backup = '';
 var show2_html_overflow_backup = '';
 var show2_body_position_backup = '';
