@@ -30,7 +30,7 @@ class TestMobileController < ApplicationController
     when 'Send changes'
       path = 'changes'
     when 'Send events load'
-      path = 'event_load'
+      path = 'events_load'
       post_params.merge! :event_id => params[:e_event_id], :show_id => params[:e_show_id],
         :cinema_id => params[:e_cinema_id], :date => params[:e_date]
     when 'Send event places'
@@ -46,6 +46,11 @@ class TestMobileController < ApplicationController
       checksum_parts = [ params[:multiplex], params[:uid], params[:order_token], params[:detailed], params[:network_id], params[:multiplex] ]
       checksum = calculate_checksum checksum_parts
       post_params.merge! :token => params[:order_token], :detailed => params[:detailed], :checksum => checksum
+    when 'Send book order'
+      path = 'book_order'
+      checksum_parts = [ params[:multiplex], params[:uid], params[:book_order_token], params[:network_id], params[:multiplex] ]
+      checksum = calculate_checksum checksum_parts
+      post_params.merge! :token => params[:book_order_token], :checksum => checksum
     when 'Send logs'
       path = 'log'
     when 'Logout'

@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
 gem 'mysql2'
-gem 'pg'
-gem 'activerecord-postgresql-adapter'
+#gem 'pg'
+#gem 'activerecord-postgresql-adapter'
 gem 'thin'
 gem 'resque', :require => "resque/server"
 gem 'redis'
