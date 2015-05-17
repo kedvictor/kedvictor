@@ -51,6 +51,11 @@ class TestMobileController < ApplicationController
       checksum_parts = [ params[:multiplex], params[:uid], params[:book_order_token], params[:network_id], params[:multiplex] ]
       checksum = calculate_checksum checksum_parts
       post_params.merge! :token => params[:book_order_token], :checksum => checksum
+    when 'Cancel order'
+      path = 'cancel_order'
+      checksum_parts = [ params[:multiplex], params[:uid], params[:cancel_order_token], params[:network_id], params[:multiplex] ]
+      checksum = calculate_checksum checksum_parts
+      post_params.merge! :token => params[:cancel_order_token], :checksum => checksum
     when 'Send logs'
       path = 'log'
     when 'Logout'
