@@ -11,10 +11,10 @@ class PrivatGatewayController < ApplicationController
   
   def send_search_request
     
-    uri = URI( PRIVAT_GATEWAY ) 
-    pars = { 
-      "action" => "bill_search", 
-      "bill_identifier" => params[:bill_identifier] } 
+    uri = URI( PRIVAT_GATEWAY )
+    pars = {
+      "action" => "bill_search",
+      "bill_identifier" => params[:bill_identifier] }
          
     uri.query = URI.encode_www_form(pars)
 

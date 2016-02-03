@@ -8,6 +8,7 @@ gem 'thin'
 gem 'resque', :require => "resque/server"
 gem 'redis'
 gem 'builder'
+gem 'em-http-request'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
