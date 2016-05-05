@@ -25,8 +25,10 @@ class TestMobileController < ApplicationController
       path = 'shows'
     when 'Send halls'
       path = 'halls'
+      post_params.merge!(:cinema_id => params[:halls_cinema_id]) if params[:halls_cinema_id].present?
     when 'Send dictionary'
       path = 'dictionary'
+      post_params.merge! :retina => params[:dictionary_retina]
     when 'Send changes'
       path = 'changes'
     when 'Send events load'
@@ -69,9 +71,11 @@ class TestMobileController < ApplicationController
     http = Net::HTTP.new(uri.host, uri.port)
     request = Net::HTTP::Post.new(uri.request_uri)
     request.set_form_data(post_params)
+    now = Time.now
     response = http.request(request)
+    @elapsed_time = (Time.now - now).to_f
+    puts "============ request duration: #{@elapsed_time} s ================="
     @result = response.body
-    puts @result
     render  
   end
 
