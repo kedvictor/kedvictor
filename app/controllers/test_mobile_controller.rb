@@ -38,11 +38,18 @@ class TestMobileController < ApplicationController
     when 'Send event places'
       path = 'event_places'      
       post_params.merge! :event_id => params[:event_id]
+    when 'Send request places'
+      path = 'request_places'
+      seats = (params[:exclude_seats] || '').gsub(' ','').split(',')
+      checksum_parts = [ params[:multiplex], params[:uid], params[:r_event_id], params[:price], params[:qty], seats.join, params[:network_id], params[:multiplex] ]     
+      checksum = calculate_checksum checksum_parts
+      post_params.merge! :event_id => params[:r_event_id], :price => params[:price], :qty => params[:qty], 'exclude_seats[]' => seats, :checksum => checksum
     when 'Send reservation'
       path = 'reservation'
-      checksum_parts = [ params[:multiplex], params[:uid], params[:reservation_event_id], params[:seat_id], params[:network_id], params[:multiplex] ]     
+      seats = params[:seat_id].gsub(' ','').split(',')
+      checksum_parts = [ params[:multiplex], params[:uid], params[:reservation_event_id], seats.join, params[:network_id], params[:multiplex] ]     
       checksum = calculate_checksum checksum_parts
-      post_params.merge! :event_id => params[:reservation_event_id], 'seat_id[]' => params[:seat_id], :checksum => checksum
+      post_params.merge! :event_id => params[:reservation_event_id], 'seat_id[]' => seats, :checksum => checksum
     when 'Send order status'
       path = 'order'
       checksum_parts = [ params[:multiplex], params[:uid], params[:order_token], params[:detailed], params[:network_id], params[:multiplex] ]
@@ -74,8 +81,9 @@ class TestMobileController < ApplicationController
     now = Time.now
     response = http.request(request)
     @elapsed_time = (Time.now - now).to_f
-    puts "============ request duration: #{@elapsed_time} s ================="
     @result = response.body
+    puts '----------------------------------'
+    puts @result.inspect
     render  
   end
 
