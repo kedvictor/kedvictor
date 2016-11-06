@@ -34,7 +34,7 @@ class TestMobileController < ApplicationController
     when 'Send events load'
       path = 'events_load'
       post_params.merge! :event_id => params[:e_event_id], :show_id => params[:e_show_id],
-        :cinema_id => params[:e_cinema_id], :date => params[:e_date]
+        :cinema_id => params[:e_cinema_id], :date => params[:e_date], :mime_type => params[:e_mime_type]
     when 'Send event places'
       path = 'event_places'      
       post_params.merge! :event_id => params[:event_id]
@@ -83,7 +83,7 @@ class TestMobileController < ApplicationController
     @elapsed_time = (Time.now - now).to_f
     @result = response.body
     puts '----------------------------------'
-    puts @result.inspect
+    #puts @result.inspect
     render  
   end
 
