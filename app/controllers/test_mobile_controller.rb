@@ -72,6 +72,8 @@ class TestMobileController < ApplicationController
       checksum_parts = [ params[:multiplex], params[:uid], params[:network_id], params[:multiplex] ]
       checksum = calculate_checksum checksum_parts
       post_params.merge! :network_id => params[:network_id], :checksum => checksum
+    when 'Cabinet'
+      path = 'cabinet'
     end    
     
     uri = URI.parse(params[:url] + path)
