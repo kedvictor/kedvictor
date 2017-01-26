@@ -65,6 +65,11 @@ class TestMobileController < ApplicationController
       checksum_parts = [ params[:multiplex], params[:uid], params[:cancel_order_token], params[:network_id], params[:multiplex] ]
       checksum = calculate_checksum checksum_parts
       post_params.merge! :token => params[:cancel_order_token], :checksum => checksum
+    when 'Rollback order'
+      path = 'rollback_order'
+      checksum_parts = [ params[:multiplex], params[:uid], params[:rollback_order_token], params[:network_id], params[:multiplex] ]
+      checksum = calculate_checksum checksum_parts
+      post_params.merge! :token => params[:rollback_order_token], :checksum => checksum
     when 'Send logs'
       path = 'log'
     when 'Logout'
@@ -74,6 +79,9 @@ class TestMobileController < ApplicationController
       post_params.merge! :network_id => params[:network_id], :checksum => checksum
     when 'Cabinet'
       path = 'cabinet'
+    when 'Send eventmap'
+      path = 'eventmap'      
+      post_params.merge! :event_id => params[:eventmap_event_id]
     end    
     
     uri = URI.parse(params[:url] + path)
