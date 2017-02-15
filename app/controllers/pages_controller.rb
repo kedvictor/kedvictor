@@ -1,5 +1,6 @@
 class PagesController < ApplicationController  
-  
+
+  around_filter :around_call, :only => :except
   
   def index
     @title = 'Wellcome'
@@ -25,8 +26,24 @@ class PagesController < ApplicationController
     @result = request.inspect
   end
   
-  def xml_request
-    
+  def xml_request    
+  end
+
+  def except   
+    begin     
+      @page = 'in method'
+      raise 'invalid params'
+    rescue => e
+      @page = 'in around_call'
+      puts e.message
+      puts e.backtrace
+    end
+  end
+
+  private
+
+  def around_call
+    yield
   end
   
 end

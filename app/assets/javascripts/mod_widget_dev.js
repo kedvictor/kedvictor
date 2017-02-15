@@ -1,4 +1,5 @@
-var show2_domain = 'http://wg.dev.2show.mobi';
+var show2_domain = 'http://kassa.2show.mobi';
+//var show2_domain = 'http://localhost:3000';
 var show2_body_overflow_backup = '';
 var show2_html_overflow_backup = '';
 var show2_body_position_backup = '';
@@ -152,8 +153,5 @@ function show2_hide_loading() {
     document.getElementById("2show_iframe").style.display = 'block';
     //document.getElementById('2show_iframe_loading').style.display = 'none';
     document.getElementById("2show_iframe").setAttribute("onload", "");
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> 8b6316243ab440193a1f091cea868ba7de0a97db

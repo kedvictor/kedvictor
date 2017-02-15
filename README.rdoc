@@ -3,5 +3,5 @@ kedvictor@gmail.com
 
 Initial commit: December, 2012
 
-From new branch 'test'
+
 
