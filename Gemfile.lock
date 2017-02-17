@@ -22,6 +22,8 @@ GEM
       activesupport (= 3.2.11)
       arel (~> 3.0.2)
       tzinfo (~> 0.3.29)
+    activerecord-mysql2-adapter (0.0.3)
+      mysql2
     activeresource (3.2.11)
       activemodel (= 3.2.11)
       activesupport (= 3.2.11)
@@ -98,7 +100,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.19)
     multi_json (1.5.0)
-    mysql2 (0.3.11)
+    mysql2 (0.4.5)
     nokogiri (1.5.3)
     polyglot (0.3.3)
     rack (1.4.3)
@@ -195,6 +197,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-mysql2-adapter
   builder
   capybara
   coffee-rails (~> 3.2.1)
@@ -215,3 +218,6 @@ DEPENDENCIES
   thin
   uglifier (>= 1.0.3)
   webrat
+
+BUNDLED WITH
+   1.14.4

@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
 gem 'mysql2'
+gem 'activerecord-mysql2-adapter'
 #gem 'pg'
 #gem 'activerecord-postgresql-adapter'
 gem 'thin'
