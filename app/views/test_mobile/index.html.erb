@@ -22,7 +22,7 @@
     <li><a href="#eventmap">Eventmap</a></li>
     <li><a href="#logs">Logs</a></li>
   </ul>  
-
+    <div id="flash"></div>
   <%= form_tag '/test_mobile/send_request', :remote => true, :class => 'request_form' do %>
     <div id="general"><%= render :partial => 'general' %></div>
     <div id="auth"><%= render :partial => 'auth' %></div>
@@ -66,6 +66,11 @@
   }
   .field {
     position: relative;    
+  }
+  
+  #flash {
+      color: red;
+      margin-top: 10px;
   }
    
 </style>

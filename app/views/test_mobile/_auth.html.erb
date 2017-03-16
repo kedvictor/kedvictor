@@ -1,5 +1,19 @@
-<p>login (phone, email): <%= text_field_tag 'login', '', :class => 'field' %></p>
-<p><%= submit_tag 'Send login' %></p>
-<p>token: <%= text_field_tag 'auth_token', '', :class => 'field' %></p>
-<p>pass: <%= text_field_tag 'auth_pass', '', :class => 'field' %></p>
-<p><%= submit_tag 'Send password' %></p>
+
+<table>
+    <tbody>
+        <tr>
+            <td>
+                <p>login (phone, email): <%= text_field_tag 'login', '@telegram:288507522', :class => 'field' %></p>
+                <p><%= submit_tag 'Send login' %></p>
+                <p>token: <%= text_field_tag 'auth_token', '', :class => 'field' %></p>
+                <p>pass: <%= text_field_tag 'auth_pass', '', :class => 'field' %></p>
+                <p><%= submit_tag 'Send password' %></p>      
+            </td>
+            <td>
+                <p>Options</p>
+                <p><%= text_area_tag 'options', '', :rows => 5, :cols => 50 %></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+        

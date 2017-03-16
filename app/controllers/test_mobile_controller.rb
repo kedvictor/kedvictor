@@ -16,6 +16,14 @@ class TestMobileController < ApplicationController
       checksum_parts = [ params[:multiplex], params[:uid], params[:login], params[:network_id], params[:multiplex] ]      
       checksum = calculate_checksum checksum_parts
       post_params.merge! :login => params[:login], :checksum => checksum
+      begin
+        if params[:options].present?
+          options = eval(params[:options])
+          post_params.merge! :options => Base64.encode64(options.to_json)
+        end
+      rescue => e
+        @error_message = e.message
+      end
     when 'Send password'
       path = 'auth'
       checksum_parts = [ params[:multiplex], params[:uid], params[:auth_token], params[:auth_pass], params[:network_id], params[:multiplex] ]      
@@ -69,7 +77,7 @@ class TestMobileController < ApplicationController
       path = 'rollback_order'
       checksum_parts = [ params[:multiplex], params[:uid], params[:rollback_order_token], params[:network_id], params[:multiplex] ]
       checksum = calculate_checksum checksum_parts
-      post_params.merge! :token => params[:rollback_order_token], :checksum => checksum
+      post_params.merge! :token => params[:rollback_order_token], :checksum => checksum, :refund => params[:refund]
     when 'Send logs'
       path = 'log'
     when 'Logout'
