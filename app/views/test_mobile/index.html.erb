@@ -21,7 +21,13 @@
     <li><a href="#rollback_order">Rollback order</a></li>
     <li><a href="#eventmap">Eventmap</a></li>
     <li><a href="#logs">Logs</a></li>
-  </ul>  
+    <li><a href="#cities">Cities</a></li>
+    <li><a href="#sites">Sites</a></li>
+    <li><a href="#site_shows">Site shows</a></li>
+    <li><a href="#site">Site</a></li>
+    <li><a href="#show">Show</a></li>
+    <li><a href="#events">Events</a></li>
+  </ul>
     <div id="flash"></div>
   <%= form_tag '/test_mobile/send_request', :remote => true, :class => 'request_form' do %>
     <div id="general"><%= render :partial => 'general' %></div>
@@ -42,6 +48,12 @@
     <div id="rollback_order"><%= render :partial => 'rollback_order' %></div>
     <div id="eventmap"><%= render :partial => 'eventmap' %></div>
     <div id="logs"><%= render :partial => 'log' %></div>
+    <div id="cities"><%= render :partial => 'cities' %></div>
+    <div id="sites"><%= render :partial => 'sites' %></div>
+    <div id="site_shows"><%= render :partial => 'site_shows' %></div>
+    <div id="site"><%= render :partial => 'site' %></div>
+    <div id="show"><%= render :partial => 'show' %></div>
+    <div id="events"><%= render :partial => 'events' %></div>
     Request duration: <span class="request_time">0</span>&nbsp;s
     <div class="output"></div>
   <% end %>
