@@ -95,7 +95,7 @@ class TestMobileController < ApplicationController
       post_params.merge! :long => params[:cities_long], :latt => params[:cities_latt]
     when 'Sites'
       path = 'sites'      
-      post_params.merge! :long => params[:sites_long], :latt => params[:sites_latt], :city => params[:sities_city]
+      post_params.merge! :long => params[:sites_long], :latt => params[:sites_latt], :city => params[:sites_city]
     when 'Site shows'
       path = 'site_shows'      
       post_params.merge! :date => params[:shows_date], :site => params[:shows_site]
@@ -107,7 +107,7 @@ class TestMobileController < ApplicationController
       post_params.merge! :show => params[:sshow_id]
     when 'Events'
       path = 'events'      
-      post_params.merge! :site => params[:events_site_id], :show => params[:events_show_id], :date => params[:events_date]
+      post_params.merge! :site => params[:events_site], :show => params[:events_show], :date => params[:events_date]
     end    
     
     uri = URI.parse(params[:url] + path)
