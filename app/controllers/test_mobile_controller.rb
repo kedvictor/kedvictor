@@ -84,9 +84,14 @@ class TestMobileController < ApplicationController
       path = 'logout'
       checksum_parts = [ params[:multiplex], params[:uid], params[:network_id], params[:multiplex] ]
       checksum = calculate_checksum checksum_parts
-      post_params.merge! :network_id => params[:network_id], :checksum => checksum
+      post_params.merge! :checksum => checksum
     when 'Cabinet'
       path = 'cabinet'
+    when 'Send refill amount'
+      path = 'account_refill'
+      checksum_parts = [ params[:multiplex], params[:uid], params[:refill_amount], params[:network_id], params[:multiplex] ]
+      checksum = calculate_checksum checksum_parts
+      post_params.merge! :checksum => checksum, :amount => params[:refill_amount]
     when 'Send eventmap'
       path = 'eventmap'      
       post_params.merge! :event_id => params[:eventmap_event_id]
