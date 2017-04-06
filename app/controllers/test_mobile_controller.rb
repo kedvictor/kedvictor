@@ -96,23 +96,25 @@ class TestMobileController < ApplicationController
       path = 'eventmap'      
       post_params.merge! :event_id => params[:eventmap_event_id]
     when 'Cities'
-      path = 'cities'      
-      post_params.merge! :long => params[:cities_long], :latt => params[:cities_latt]
-    when 'Sites'
-      path = 'sites'      
-      post_params.merge! :long => params[:sites_long], :latt => params[:sites_latt], :city => params[:sites_city]
-    when 'Site shows'
-      path = 'site_shows'      
-      post_params.merge! :date => params[:shows_date], :site => params[:shows_site]
-    when 'Site'
-      path = 'site'      
-      post_params.merge! :site => params[:ssite_id]
+      path = 'cities'
+      post_params.merge! :long => params[:cities_long], :lat => params[:cities_latt],
+        :date => params[:cities_date], :show_id => params[:cities_show]
+    when 'Cinemas'
+      path = 'cinemas'      
+      post_params.merge! :long => params[:cinemas_long], :lat => params[:cinemas_latt],
+        :city_id => params[:cinemas_city], :show_id => params[:cinemas_show], :date => params[:cinemas_date]
+    when 'Cinema shows'
+      path = 'cinema_shows'      
+      post_params.merge! :date => params[:shows_date], :cinema_id => params[:shows_cinema], :city_id => params[:shows_city]
+    when 'Cinema'
+      path = 'cinema'      
+      post_params.merge! :cinema_id => params[:scinema_id]
     when 'Show'
       path = 'show'      
-      post_params.merge! :show => params[:sshow_id]
+      post_params.merge! :show_id => params[:sshow_id]
     when 'Events'
       path = 'events'      
-      post_params.merge! :site => params[:events_site], :show => params[:events_show], :date => params[:events_date]
+      post_params.merge! :cinema_id => params[:events_cinema], :show_id => params[:events_show], :date => params[:events_date]
     end    
     
     uri = URI.parse(params[:url] + path)

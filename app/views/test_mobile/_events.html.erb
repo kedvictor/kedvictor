@@ -1,6 +1,6 @@
 
-<p>date: <%= text_field_tag 'events_date', Time.now.strftime('%d.%m.%Y'), :class => 'field' %></p>
-<p>site_id: <%= text_field_tag 'events_site', '', :class => 'field' %></p>
+<p>date: <%= text_field_tag 'events_date', Time.now.strftime('%d-%m-%Y'), :class => 'field' %></p>
+<p>cinema_id: <%= text_field_tag 'events_cinema', '', :class => 'field' %></p>
 <p>show_id: <%= text_field_tag 'events_show', '', :class => 'field' %></p>
 
 <p><%= submit_tag 'Events' %></p>
