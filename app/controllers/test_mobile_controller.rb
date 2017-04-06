@@ -95,6 +95,24 @@ class TestMobileController < ApplicationController
     when 'Send eventmap'
       path = 'eventmap'      
       post_params.merge! :event_id => params[:eventmap_event_id]
+    when 'Cities'
+      path = 'cities'      
+      post_params.merge! :long => params[:cities_long], :latt => params[:cities_latt]
+    when 'Sites'
+      path = 'sites'      
+      post_params.merge! :long => params[:sites_long], :latt => params[:sites_latt], :city => params[:sites_city]
+    when 'Site shows'
+      path = 'site_shows'      
+      post_params.merge! :date => params[:shows_date], :site => params[:shows_site]
+    when 'Site'
+      path = 'site'      
+      post_params.merge! :site => params[:ssite_id]
+    when 'Show'
+      path = 'show'      
+      post_params.merge! :show => params[:sshow_id]
+    when 'Events'
+      path = 'events'      
+      post_params.merge! :site => params[:events_site], :show => params[:events_show], :date => params[:events_date]
     end    
     
     uri = URI.parse(params[:url] + path)
