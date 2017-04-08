@@ -1,6 +1,8 @@
 
-<p>date: <%= text_field_tag 'shows_date', Time.now.strftime('%d.%m.%Y'), :class => 'field' %></p>
-<p>cinema_id: <%= text_field_tag 'shows_cinema', '', :class => 'field' %></p>
+<p>date: <%= text_field_tag 'shows_date', Time.now.strftime('%d-%m-%Y'), :class => 'field' %></p>
 <p>city_id: <%= text_field_tag 'shows_city', '', :class => 'field' %></p>
+<p>cinema_id: <%= text_field_tag 'shows_cinema', '', :class => 'field' %></p>
+<p>show_id: <%= text_field_tag 'shows_show', '', :class => 'field' %></p>
+
 
 <p><%= submit_tag 'Cinema shows' %></p>
